@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+                "sidebar menu"
+                "sidebar content";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr;
+            width: 100%;
+            height: 100vh;
+        }
+        .box {
+            border: 1px solid #ccc;
+        }
+        .menu {
+            grid-area: menu;
+            height: 100px;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 10px;
+        }
+        .sidebar div {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .content {
+            grid-area: content;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box menu">Menu Admin</div>
+    <div class="box sidebar">
+        <div>Product</div>
+        <div>Order</div>
+    </div>
+    <div class="box content">List Users</div>
+</div>
+</body>
+</html>
